@@ -1,4 +1,4 @@
-package md5
+package main
 
 import (
 	"crypto/md5"
