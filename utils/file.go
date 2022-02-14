@@ -29,7 +29,7 @@ func scanFile(level int, fileDir string, relative string, fileCache *[]string) {
 			var findFilePath = relative + pathSeparator + onefile.Name()
 			//var findFilePath = onefile.Name()
 			*fileCache = append(*fileCache, findFilePath)
-			fmt.Println("-----", findFilePath )
+			//fmt.Println("-----", findFilePath )
 		}
 	}
 }
