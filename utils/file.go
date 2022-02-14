@@ -9,7 +9,7 @@ import (
 )
 
 
-func scanFile(level int, fileDir string, relative string, fileCache [] string) {
+func scanFile(level int, fileDir string, relative string, fileCache *[]string) {
 
 	pathSeparator := string(os.PathSeparator)
 
@@ -28,15 +28,15 @@ func scanFile(level int, fileDir string, relative string, fileCache [] string) {
 		} else {
 			var findFilePath = relative + pathSeparator + onefile.Name()
 			//var findFilePath = onefile.Name()
-			fileCache = append(fileCache, findFilePath)
-			//fmt.Println("-----", findFilePath )
+			*fileCache = append(*fileCache, findFilePath)
+			fmt.Println("-----", findFilePath )
 		}
 	}
 }
 
 func ScanFile(fileDir string) [] string {
-	var files = make([] string, 0, 1)
-	scanFile(1, fileDir, "", files)
+	var files = make([]string, 0, 1)
+	scanFile(1, fileDir, "", &files)
 
 	//fmt.Println("-----------------" )
 	//fmt.Println("-----共找到文件数量：", len(files) )
